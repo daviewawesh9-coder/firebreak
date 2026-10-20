@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b1718" />
+    <meta name="description" content="Firebreak maps account recovery paths and helps you fix the highest-impact weakness first." />
+    <title>Firebreak — map your account blast radius</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Firebreak home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>firebreak</span>
+      </a>
+      <div class="topbar-actions">
+        <span class="privacy-pill"><span class="status-dot"></span> runs in your browser</span>
+        <button class="text-button" id="privacyButton">Privacy</button>
+        <button class="button button-small button-ghost" id="loadDemoButton">Load demo</button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">PERSONAL ACCOUNT DEFENSE</p>
+          <h1>Find the account<br /><em>everything depends on.</em></h1>
+          <p class="hero-lede">Firebreak maps the recovery paths between your accounts, then shows you the one improvement that protects the most.</p>
+          <div class="hero-actions">
+            <button class="button button-primary" id="startButton">Map my accounts <span>→</span></button>
+            <button class="button button-quiet" id="seeDemoButton">See how it works</button>
+          </div>
+          <div class="hero-trust">
+            <span>⌁</span> No passwords &nbsp;·&nbsp; No uploads &nbsp;·&nbsp; Works offline
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Example account dependency map">
+          <div class="map-card">
+            <div class="map-card-header">
+              <span>EXAMPLE MAP</span>
+              <span class="map-card-live"><i></i> LOCAL ONLY</span>
+            </div>
+            <div class="map-canvas hero-canvas">
+              <svg viewBox="0 0 480 290" role="img" aria-label="A Gmail account connected to other accounts">
+                <defs>
+                  <linearGradient id="heroLine" x1="0" x2="1">
+                    <stop offset="0" stop-color="#36d399" stop-opacity=".9" />
+                    <stop offset="1" stop-color="#36d399" stop-opacity=".08" />
+                  </linearGradient>
+                </defs>
+                <path class="map-line" d="M237 139 C180 105 131 76 83 58" />
+                <path class="map-line" d="M237 145 C170 145 115 145 59 145" />
+                <path class="map-line" d="M243 151 C190 190 138 211 82 233" />
+                <path class="map-line" d="M247 137 C300 101 350 79 405 63" />
+                <path class="map-line faint" d="M247 147 C312 148 365 147 425 145" />
+                <path class="map-line faint" d="M246 155 C301 192 350 211 400 229" />
+                <circle class="pulse-ring" cx="240" cy="145" r="43" />
+                <g class="map-node root-node" transform="translate(240 145)">
+                  <circle r="32"></circle><text y="5" text-anchor="middle">G</text>
+                </g>
+                <g class="map-node small-node" transform="translate(80 58)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">☁</text>
+                </g>
+                <g class="map-node small-node" transform="translate(58 145)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">◎</text>
+                </g>
+                <g class="map-node small-node" transform="translate(80 233)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">▣</text>
+                </g>
+                <g class="map-node small-node" transform="translate(405 63)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">◈</text>
+                </g>
+                <g class="map-node small-node" transform="translate(425 145)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">N</text>
+                </g>
+                <g class="map-node small-node" transform="translate(400 229)">
+                  <circle r="19"></circle><text y="4" text-anchor="middle">♢</text>
+                </g>
+              </svg>
+              <div class="map-callout"><strong>Gmail</strong><span>single point of failure</span></div>
+            </div>
+            <div class="map-card-footer"><span class="legend-dot"></span> recovery path <span class="footer-count">6 accounts connected</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="how-section section-shell" id="howItWorks">
+        <div class="section-heading">
+          <p class="eyebrow">HOW IT WORKS</p>
+          <h2>From scattered accounts<br />to a clear next step.</h2>
+        </div>
+        <div class="steps">
+          <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌘</div><h3>Describe your accounts</h3><p>Add services, recovery paths, sign-in providers, and 2FA. No passwords needed.</p></article>
+          <article class="step-card"><span class="step-number">02</span><div class="step-icon">◌</div><h3>See the connections</h3><p>Firebreak turns the details into a private map of what can unlock what.</p></article>
+          <article class="step-card"><span class="step-number">03</span><div class="step-icon">↗</div><h3>Fix what matters most</h3><p>Get a ranked, explainable checklist ordered by potential blast radius.</p></article>
+        </div>
+      </section>
+
+      <section class="workspace-section section-shell" id="workspace">
+        <div class="workspace-header">
+          <div><p class="eyebrow">YOUR FIREBREAK</p><h2>Map your account paths</h2></div>
+          <div class="workspace-actions"><button class="button button-ghost" id="importButton">Import JSON</button><button class="button button-ghost" id="exportButton">Export JSON</button><button class="button button-primary" id="addAccountButton">＋ Add account</button><input type="file" id="fileInput" accept=".json,application/json" hidden /></div>
+        </div>
+        <div class="workspace-grid">
+          <div class="panel accounts-panel">
+            <div class="panel-header"><div><h3>Accounts <span class="count-badge" id="accountCount">0</span></h3><p>Only information you choose to enter.</p></div><button class="icon-button" id="clearButton" title="Clear all accounts">⌫</button></div>
+            <div class="account-list" id="accountList"><div class="empty-state"><span class="empty-icon">＋</span><strong>No accounts yet</strong><span>Add an account or load the demo to see your map.</span><button class="button button-small button-primary" id="emptyAddButton">Add first account</button></div></div>
+          </div>
+          <div class="panel map-panel">
+            <div class="panel-header"><div><h3>Dependency map</h3><p>Arrows show a recovery or sign-in path.</p></div><span class="local-badge"><i></i> LOCAL</span></div>
+            <div class="map-canvas app-canvas" id="appMap"><div class="map-empty">Your map will appear here</div></div>
+            <div class="map-legend"><span><i class="legend-dot green"></i> Recovery / SSO</span><span><i class="legend-dot orange"></i> Phone recovery</span><span class="confidence-note">Confidence is based on what you entered</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="insights-section section-shell">
+        <div class="section-heading split-heading"><div><p class="eyebrow">WHAT TO FIX FIRST</p><h2>Your highest-impact improvements</h2></div><div class="score-wrap"><span class="score-label">BLAST RADIUS SCORE</span><strong id="blastScore">—</strong><span id="scoreHint">Add accounts to calculate</span></div></div>
+        <div class="insights-grid">
+          <div class="recommendations" id="recommendations"><div class="insights-empty">Recommendations appear once Firebreak has enough account connections to analyze.</div></div>
+          <div class="panel breach-panel">
+            <div class="panel-header"><div><h3>Breach mode</h3><p>Pick the account that was breached.</p></div><span class="warning-mark">!</span></div>
+            <label class="field-label" for="breachedAccount">Breached service</label>
+            <select class="field-input" id="breachedAccount"><option value="">Select an account...</option></select>
+            <div id="breachResult" class="breach-result"><span class="breach-shield">✓</span><strong>Choose an account to get a recovery checklist.</strong><span>We’ll prioritize the paths that may be exposed next.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="privacy-section section-shell" id="privacySection">
+        <div class="privacy-lock">⌁</div><div><p class="eyebrow">DESIGNED FOR TRUST</p><h2>Your account map stays yours.</h2><p>Firebreak is a static app. Your entries are held in this browser tab only unless you explicitly export them. There is no account, backend, analytics, or password field.</p></div><div class="privacy-list"><span>✓ No server or uploads</span><span>✓ No passwords collected</span><span>✓ Open and auditable</span></div>
+      </section>
+    </main>
+
+    <footer class="footer section-shell"><span>firebreak <small>v0.1</small></span><span>Personal account defense, offline by design.</span><a href="#privacySection">Read the privacy promise ↑</a></footer>
+
+    <dialog id="accountDialog" class="account-dialog">
+      <form method="dialog" id="accountForm">
+        <div class="dialog-header"><div><p class="eyebrow">ACCOUNT DETAILS</p><h2 id="dialogTitle">Add an account</h2></div><button class="icon-button" value="cancel" aria-label="Close">×</button></div>
+        <input type="hidden" id="accountId" />
+        <label class="field-label" for="serviceName">Service name</label><input class="field-input" id="serviceName" required placeholder="e.g. Gmail, Bank, GitHub" />
+        <label class="field-label" for="loginEmail">Login email or identifier</label><input class="field-input" id="loginEmail" required placeholder="alex@example.com" />
+        <label class="field-label" for="recoveryPath">Recovery email or phone <span>optional</span></label><input class="field-input" id="recoveryPath" placeholder="alex@gmail.com or +1..." />
+        <label class="field-label" for="ssoProvider">Sign in with <span>optional</span></label><select class="field-input" id="ssoProvider"><option value="">No single sign-on</option><option>Google</option><option>Apple</option><option>Microsoft</option><option>Facebook</option><option>GitHub</option></select>
+        <label class="field-label" for="twoFactor">2FA method</label><select class="field-input" id="twoFactor"><option value="none">None / unknown</option><option value="sms">SMS codes</option><option value="authenticator">Authenticator app</option><option value="passkey">Passkey / security key</option><option value="email">Email codes</option></select>
+        <div class="dialog-actions"><button type="button" class="button button-ghost" id="cancelDialog">Cancel</button><button class="button button-primary" value="default">Save account</button></div>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="engine.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

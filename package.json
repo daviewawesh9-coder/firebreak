@@ -1,0 +1,13 @@
+{
+  "name": "firebreak",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline-first account dependency mapping for finding high-impact recovery weaknesses.",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check engine.js && node --check app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

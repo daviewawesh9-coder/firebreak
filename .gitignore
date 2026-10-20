@@ -1,0 +1,23 @@
+# Local editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependencies and generated output
+node_modules/
+coverage/
+dist/
+build/
+
+# Local account maps and test artifacts
+firebreak-account-map*.json
+*.local.json
+*.log
+
+# Environment files and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
