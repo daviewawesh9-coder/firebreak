@@ -1,0 +1,23 @@
+name: Feature request
+description: Suggest a focused improvement for Firebreak.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What user problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you propose?
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy and security considerations
+      description: Explain what data the feature would need and whether it could remain offline.
