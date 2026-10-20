@@ -1,5 +1,63 @@
 # Firebreak
 
+
+## Find the account everything depends on.
+
+
+Firebreak is an offline-first account security mapping tool created by [Davie Wawesh](https://github.com/daviewawesh9-coder). It turns the recovery emails, phone numbers, sign-in providers, and 2FA methods you choose to enter into a private dependency map, then ranks the highest-impact improvements.
+
+
+![Firebreak demo showing a fictional account dependency map](demo.png)
+
+
+> Firebreak is a decision-support prototype, not a breach detector or a guarantee of account safety.
+
+
+## Why Firebreak?
+
+
+Accounts are rarely independent. An email account may reset a bank account, a phone number may recover several services, and a single sign-in provider may open many apps. When something is breached, generic advice can leave people unsure what to do first.
+
+
+Firebreak is designed for people who want a clearer next step:
+
+
+- **Individuals** who want to understand their personal account dependencies.
+- **Freelancers and small teams** who need a lightweight, local map before adopting a larger security process.
+- **Privacy-minded users** who do not want to upload an account inventory to a service.
+- **Contributors** who want to improve an auditable, dependency-free web tool.
+
+
+## What it does
+
+
+- **Manual account inventory:** Add a service, login identifier, recovery path, SSO provider, and 2FA method. Passwords are never requested.
+- **Dependency map:** See explicit recovery and sign-in relationships between the accounts you entered.
+- **Impact-ranked recommendations:** Find accounts with the largest mapped downstream impact and understand why they were ranked.
+- **Breach mode:** Select a fictional or personal account and receive an ordered recovery checklist based on the relationships in your map.
+- **Confidence labels:** Explicit recovery matches are high confidence; SSO relationships are treated as medium confidence.
+- **Local JSON transfer:** Export or import a map yourself. Imported records receive fresh internal IDs.
+- **Demo persona:** Load fictional data and explore the workflow without entering personal information.
+
+
+## Quick start
+
+
+### Fastest option
+
+
+1. Download or clone this repository.
+2. Open [`index.html`](index.html) in a modern browser.
+3. Select **Load demo**.
+4. Scroll to **Your Firebreak** and inspect the map and recommendations.
+5. Add your own accounts only if you understand the privacy model below.
+
+
+### Optional local server
+
+
+If your browser or editor restricts local files, use any static-file server. With Node.js 18 or newer:# Firebreak
+
 ## Find the account everything depends on.
 
 Firebreak is an offline-first account security mapping tool created by [Davie Wawesh](https://github.com/daviewawesh9-coder). It turns the recovery emails, phone numbers, sign-in providers, and 2FA methods you choose to enter into a private dependency map, then ranks the highest-impact improvements.
