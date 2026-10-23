@@ -62,7 +62,7 @@ If your browser or editor restricts local files, use any static-file server. Wit
 
 Firebreak is an offline-first account security mapping tool created by [Davie Wawesh](https://github.com/daviewawesh9-coder). It turns the recovery emails, phone numbers, sign-in providers, and 2FA methods you choose to enter into a private dependency map, then ranks the highest-impact improvements.
 
-![Firebreak demo showing a fictional account dependency map](docs/demo.png)
+![Firebreak demo showing a fictional account dependency map](demo.png)
 
 > Firebreak is a decision-support prototype, not a breach detector or a guarantee of account safety.
 
